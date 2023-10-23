@@ -1,0 +1,490 @@
+{% extends 'base.html' %}
+
+{% load static  %} {% csrf_token %}
+{% block content %}
+
+<div class="map-locations-box">
+	<div class="map-locations-box-inner">
+		<div class="box-inner-col locations-map">
+			<div class="spinner-box visible">
+				<div class="spinner-wrapper">
+					<span class="spinner"></span>
+				</div>
+			</div>
+
+			<div data-map-markers='[{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21103743\/Image_from_Skype1.png","marker_coord":{"lat":"40.7127837","lon":"-74.00594130000002"},"id":142},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21104301\/Image_from_Skype2.png","marker_coord":{"lat":"40.7127837","lon":"-73.9026977"},"id":140},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21085148\/popular-post-1.jpg","marker_coord":{"lat":"40.7207837","lon":"-73.9626977"},"id":109},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21085511\/popular-post-3.jpg","marker_coord":{"lat":"40.7050045","lon":"-73.9626977"},"id":70},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21085349\/popular-post-2.jpg","marker_coord":{"lat":"40.7230045","lon":"-73.9006937"},"id":67},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/06133056\/Foodshot_2016_16_5.jpg","marker_coord":{"lat":"40.7000045","lon":"-73.9106937"},"id":63},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/06133001\/photo-1456930266018-fda42f7404a7.jpg","marker_coord":{"lat":"40.7205045","lon":"-73.9426977"},"id":60},{"marker":"https:\/\/d3sgyrafn929g0.cloudfront.net\/wp-content\/uploads\/sites\/24\/2016\/12\/21102257\/Image_from_Skype.png","marker_coord":{"lat":"40.7105045","lon":"-73.9626977"},"id":55}]' id="map-canvas" class="map-container"></div>
+		</div>
+
+		<div class="box-inner-col locations-results">
+
+            <div class="results-filters">
+				<div class="filters-inner">
+
+					<!-- Select Boxes -->
+					<div class="filter-select-boxes">
+						<select class="select-options city-ajax">
+							<option>ALL</option>
+							<option>Brooklyn</option>
+							<option>Bronx</option>
+							<option>New York</option>
+					    </select>
+
+						<!-- Select Boxes -->
+						<select class="select-options category-ajax">
+							<option>ALL</option>
+							<option>Bar</option>
+							<option>Dinner</option>
+							<option>Lunch</option>
+							<option>NightLife</option>
+							<option>Pub</option>
+							<option>Restaurant</option>
+					    </select>
+					</div>
+
+					<!-- Price Range -->
+					<div class="price-filter-block">
+						<span class="block-title">Price filter:</span>
+						<div class="price-range-blocks">
+							<label class="price-range-block">
+								<input type="checkbox" hidden class="price-range-hinput" value="1"/>
+								<span class="amount">
+									<i class="icon-usd full"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+								</span>
+							</label>
+
+							<label class="price-range-block">
+								<input type="checkbox" hidden class="price-range-hinput" value="2"/>
+								<span class="amount">
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+								</span>
+							</label>
+
+							<label class="price-range-block">
+								<input type="checkbox" hidden class="price-range-hinput" value="3"/>
+								<span class="amount">
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd"></i>
+									<i class="icon-usd"></i>
+								</span>
+							</label>
+
+							<label class="price-range-block">
+								<input type="checkbox" hidden class="price-range-hinput" value="4"/>
+								<span class="amount">
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd"></i>
+								</span>
+							</label>
+
+							<label class="price-range-block">
+								<input type="checkbox" hidden class="price-range-hinput" value="5"/>
+								<span class="amount">
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+									<i class="icon-usd full"></i>
+								</span>
+							</label>
+						</div>
+					</div>
+
+					<!-- Filters Categories -->
+					<div class="filters-categories">
+						<div class="categories-list-wrapper">
+							<span class="list-title">Choose tags:</span>
+							<ul class="clean-list categories-list">
+    							<li>assistance</li>
+
+    							<li>beer</li>
+
+    							<li>bird</li>
+
+    							<li>cars</li>
+
+    							<li>cheese</li>
+
+    							<li>city</li>
+
+    							<li>drinks</li>
+
+    							<li>excursion</li>
+
+    							<li>help</li>
+
+    							<li>millions</li>
+
+    							<li>mountains</li>
+
+    							<li>music</li>
+
+    							<li>save</li>
+
+    							<li>sky</li>
+
+    							<li>social</li>
+
+    							<li>specials</li>
+
+    							<li>turists</li>
+
+    							<li>unicef</li>
+
+    							<li>valley</li>
+
+    						</ul>
+						</div>
+
+						<div class="choosed-categories"></div>
+					</div>
+				</div>
+			</div>
+
+			<ul class="clean-list results-list">
+                <li class="location-item location-ajax" data-id="142">
+                	<div class="image">
+                		<a href="https://demo.teslathemes.com/locales/locations/presidential-restaurant/">
+                			<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21103743/Image_from_Skype1-150x135.png" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+                		<span class="add-to-favorites not_logged">
+                			<i class="icon-like_outline"></i>
+                		</span>
+                	</div>
+
+                	<div class="item-body">
+                		<h4 class="item-title">
+                			<a href="https://demo.teslathemes.com/locales/locations/presidential-restaurant/">Presidential Restaurant</a>
+                		</h4>
+						<p class="location">Hampton St, Elmhurst, NY 11373</p>
+					    <div class="review-details">
+                			<div class="rating">
+                                <span class="bars">
+                					<i class="full"></i>
+                					<i class="full"></i>
+                					<i class="full"></i>
+                					<i class="full"></i>
+            					<i></i>
+            				    </span>
+                				<span class="value">(4.0)</span>
+                			</div>
+                			<div class="price-range">
+                				<span class="amount">
+                					<i class="icon-usd  full"></i>
+                					<i class="icon-usd  full"></i>
+                					<i class="icon-usd  full"></i>
+                					<i class="icon-usd "></i>
+                					<i class="icon-usd "></i>
+                				</span>
+                			</div>
+                		</div>
+
+                		<ul class="clean-list item-facilities"></ul>
+                	</div>
+                </li>
+                <li class="location-item location-ajax" data-id="140">
+
+                    <div class="image">
+    					<a href="https://demo.teslathemes.com/locales/locations/the-best-pasta-in-the-city/">
+    						<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21104301/Image_from_Skype2-150x135.png" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+    					<span class="add-to-favorites not_logged">
+    						<i class="icon-like_outline"></i>
+    					</span>
+    				</div>
+
+    				<div class="item-body">
+    					<h4 class="item-title">
+    						<a href="https://demo.teslathemes.com/locales/locations/the-best-pasta-in-the-city/">The best pasta in the city</a>
+    					</h4>
+    														<p class="location">Hampton St, Elmhurst, NY 11373</p>
+    													<div class="review-details">
+    						<div class="rating">
+    																	<span class="bars">
+    								<i ></i>
+    								<i ></i>
+    								<i ></i>
+    								<i ></i>
+    								<i ></i>
+    							</span>
+    							<span class="value">(0.0)</span>
+    						</div>
+    						<div class="price-range">
+    							<span class="amount">
+    								<i class="icon-usd  full"></i>
+    								<i class="icon-usd  full"></i>
+    								<i class="icon-usd  full"></i>
+    								<i class="icon-usd  full"></i>
+    								<i class="icon-usd "></i>
+    							</span>
+    						</div>
+    					</div>
+
+    					<ul class="clean-list item-facilities"></ul>
+    				</div>
+    			</li>
+				<li class="location-item location-ajax" data-id="109">
+					<div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/night-pub-two/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21085148/popular-post-1-150x135.jpg" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/night-pub-two/">Otto&#8217;s night pub</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i ></i>
+									<i ></i>
+								</span>
+								<span class="value">(3.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+				<li class="location-item location-ajax" data-id="70">
+					<div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/night-pub/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21085511/popular-post-3-150x135.jpg" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/night-pub/">Country pub</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i ></i>
+								</span>
+								<span class="value">(4.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+                <li class="location-item location-ajax" data-id="67">
+
+                    <div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/earls-beer-and-cheese/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21085349/popular-post-2-150x135.jpg" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/earls-beer-and-cheese/">Earl&#8217;s beer and cheese</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+								</span>
+								<span class="value">(5.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+									<i class="icon-usd "></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+				<li class="location-item location-ajax" data-id="63">
+
+                    <div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/two-hands-restaurant-and-bar/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/06133056/Foodshot_2016_16_5-150x135.jpg" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/two-hands-restaurant-and-bar/">Two hands restaurant &#8211; Bar</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+								</span>
+								<span class="value">(5.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd "></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+				<li class="location-item location-ajax" data-id="60">
+					<div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/hudson-eats/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/06133001/photo-1456930266018-fda42f7404a7-150x135.jpg" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/hudson-eats/">Hudson eats</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i ></i>
+									<i ></i>
+									<i ></i>
+									<i ></i>
+								</span>
+								<span class="value">(1.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+				<li class="location-item location-ajax" data-id="55">
+					<div class="image">
+						<a href="https://demo.teslathemes.com/locales/locations/comedy-cellar/">
+							<img width="150" height="135" src="https://d3sgyrafn929g0.cloudfront.net/wp-content/uploads/sites/24/2016/12/21102257/Image_from_Skype-150x135.png" class="attachment-tt_explore_locations size-tt_explore_locations wp-post-image" alt="" />								</a>
+
+						<span class="add-to-favorites not_logged">
+							<i class="icon-like_outline"></i>
+						</span>
+					</div>
+
+					<div class="item-body">
+						<h4 class="item-title">
+							<a href="https://demo.teslathemes.com/locales/locations/comedy-cellar/">Comedy cellar</a>
+						</h4>
+															<p class="location">225 Liberty St (South End Avenue)</p>
+														<div class="review-details">
+							<div class="rating">
+																		<span class="bars">
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+									<i class="full"></i>
+								</span>
+								<span class="value">(5.0)</span>
+							</div>
+							<div class="price-range">
+								<span class="amount">
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+									<i class="icon-usd  full"></i>
+								</span>
+							</div>
+						</div>
+
+						<ul class="clean-list item-facilities">
+															</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

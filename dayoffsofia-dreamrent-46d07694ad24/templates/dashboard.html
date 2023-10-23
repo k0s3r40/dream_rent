@@ -1,0 +1,1448 @@
+{% extends 'base.html' %}
+
+{% load static  %} {% csrf_token %}
+{% block content %}
+
+<!-- Main Content Box -->
+<div class="content-box">
+	<section id="post-9" class="section section-dashboard">
+		<h2 class="section-title">
+			<div class="container">Dashboard</div>
+		</h2>
+		<div class="dashboard-tabs">
+			<div class="tabed-content">
+				<div class="tabs-header">
+					<div class="container">
+
+						<!-- Tabs -->
+						<ul class="clean-list tab-links">
+							<li class="tab-link" data-tab-link="dashboard-tab-1">
+								<i class="icon icon-Streamline-182"></i>
+								<span class="text">Dashboard</span>
+							</li>
+
+							<li class="tab-link" data-tab-link="dashboard-tab-2">
+								<i class="icon icon-Streamline-52"></i>
+								<span class="text">My reservations</span>
+							</li>
+
+							<li class="tab-link" data-tab-link="dashboard-tab-3">
+								<i class="icon icon-Streamline-52"></i>
+								<span class="text">My sites</span>
+							</li>
+
+							<li class="tab-link" data-tab-link="dashboard-tab-4">
+								<i class="icon icon-Streamline-75"></i>
+								<span class="text">Edit profile</span>
+							</li>
+
+							<li class="tab-link current" data-tab-link="dashboard-tab-5">
+								<i class="icon icon-Streamline-22"></i>
+								<span class="text">Add your site</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="tabs-body">
+					<div class="container">
+
+						<!-- My Dashboard -->
+						<div class="tab-item" id="dashboard-tab-1">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="dashboard-list-box">
+										<div class="box-header">My reservations</div>
+
+										<div class="box-body">
+											<!-- User reservations -->
+											<ol>
+												<li>
+													<p>Presidential Restaurant</p>
+												</li>
+												<li>
+													<p>The best pasta in the city</p>
+												</li>
+												<li>
+													<p>Otto’s night pub</p>
+												</li>
+											</ol>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="dashboard-list-box">
+										<div class="box-header">My sites</div>
+
+										<div class="box-body">
+											<!-- User sites -->
+											<ol>
+												You do not have any favourite listings yet.
+											</ol>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="align-center">
+								<a href="#" class="btn btn-default color-2 add-listing-tab">Add site</a>
+							</div>
+						</div>
+
+						<!-- My Reservations -->
+						<div class="tab-item" id="dashboard-tab-2">
+							<div class="profile-listing-table">
+								<table class="listing-table">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Location title</th>
+											<th>Date posted</th>
+											<th></th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr class="listing_item_row">
+											<td>1</td>
+											<td>
+												<a href="https://demo.teslathemes.com/locales/locations/presidential-restaurant/">Presidential Restaurant</a>
+											</td>
+											<td>December 21, 2016</td>
+											<td>
+												<a href="#" class="delete-btn listing-ajax" data-id="142" data-confirm_text="Confirm" data-cancel_text="Cancel" data-dialog_title="Confirm Deletion?" data-dialog_content="Do you really want to remove this item?">
+													<span class="text">Delete</span>
+													<i class="icon icon-delete"></i>
+												</a>
+											</td>
+										</tr>
+										<tr class="listing_item_row">
+											<td>2</td>
+											<td>
+												<a href="https://demo.teslathemes.com/locales/locations/the-best-pasta-in-the-city/">The best pasta in the city</a>
+											</td>
+											<td></td>
+											<td>
+												<a href="#" class="delete-btn listing-ajax" data-id="140" data-confirm_text="Confirm" data-cancel_text="Cancel" data-dialog_title="Confirm Deletion?" data-dialog_content="Do you really want to remove this item?">
+													<span class="text">Delete</span>
+													<i class="icon icon-delete"></i>
+												</a>
+											</td>
+										</tr>
+										<tr class="listing_item_row">
+											<td>3</td>
+											<td>
+												<a href="https://demo.teslathemes.com/locales/locations/night-pub-two/">Otto’s night pub</a>
+											</td>
+											<td>December 6, 2016</td>
+											<td>
+												<a href="#" class="delete-btn listing-ajax" data-id="109" data-confirm_text="Confirm" data-cancel_text="Cancel" data-dialog_title="Confirm Deletion?" data-dialog_content="Do you really want to remove this item?">
+													<span class="text">Delete</span>
+													<i class="icon icon-delete"></i>
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="align-right">
+									<a href="#" class="btn btn-default color-2 add-listing-tab">Add your listing</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- My Sites -->
+						<div class="tab-item" id="dashboard-tab-3">
+							<div class="profile-listing-table">
+
+								<table class="listing-table favourites-list">
+									<thead>
+										<tr>
+											<th></th>
+											<th>Location title</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td class="no_listings_to_show"><p>You do not have any favourite listings yet.</p></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<div class="align-center">
+									<a href="#" class="btn btn-default color-2 add-listing-tab">Add site</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Edit User -->
+						<div class="tab-item" id="dashboard-tab-4">
+
+							<form class="dashboard-form edit-profile-form" action="" method="post">
+								<div class="main-details">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="input-line">
+												<input type="text" name="firstname" data-first="" class="form-input check-value" placeholder="First Name" value="">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-line">
+												<input type="text" name="lastname" data-last="" class="form-input check-value" placeholder="Last Name" value="">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-line">
+												<input type="text" name="email" data-mail="" class="form-input check-value dashboard_email" placeholder="E-mail" value="">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="input-line">
+												<input type="text" name="phone" data-phone="" class="form-input check-value" placeholder="Phone" value="">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="password-block">
+									<h5 class="block-title">Password change</h5>
+
+									<div class="password-inputs">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="input-line">
+													<input type="password" name="password" class="form-input check-value dashboard_pass" placeholder="New password">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="input-line">
+													<input type="password" name="password-repeat" class="form-input check-value dashboard_pass_r" placeholder="Confirm new password">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="align-center">
+									<input type="submit" name="wp-submit" class="btn save-btn btn-default color-2 " value="Save">
+								</div>
+							</form>
+						</div>
+
+						<!-- Add Site Form -->
+						<div class="tab-item current" id="dashboard-tab-5">
+							<form id="ajax-property-form" class="dashboard-form upload-property-form" enctype="multipart/form-data">
+								<div class="user-details">
+									<a href="{% url 'logout' %}" class="btn-sign-out">Sign out</a>
+								</div>
+
+								<!-- Main Info -->
+								<div class="property-main-info">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="input-line">
+												<input type="text" name="location-name" class="form-input check-value required-input" placeholder="Listing name">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="select-box">
+												<input type="text" name="location-category" class="select-box-input form-input check-value required-input" readonly="" placeholder="Category">
+												<ul class="clean-list select-box-options">
+													<li class="option">Bar</li>
+													<li class="option">Dinner</li>
+													<li class="option">Lunch</li>
+													<li class="option">NightLife</li>
+													<li class="option">Pub</li>
+													<li class="option">Restaurant</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="input-line">
+												<textarea class="form-input check-value" name="Location[description]" placeholder="Description"></textarea>
+											</div>
+										</div>
+									</div>
+
+									<!-- Location Tags -->
+									<div class="property-tags-block">
+										<div class="tags-block-inner">
+											<span class="block-title">Listing tags</span>
+
+											<div class="add-tags-block">
+												<div class="input-line">
+													<input type="text" name="location-tags" class="form-input check-value" placeholder="Add tag">
+													<input type="hidden" name="tagList" class="tag-list-input">
+												</div>
+											</div>
+
+											<p class="block-descrption">Visitors can filter their search by the amenities too, so make sure you include all the relevant ones.</p>
+										</div>
+
+										<div class="tags-list"></div>
+									</div>
+
+									<!-- Property Price Range -->
+									<div class="property-price-range">
+										<span class="title">Add a price range</span>
+
+										<div class="amount">
+											<i class="icon-usd"></i>
+											<i class="icon-usd"></i>
+											<i class="icon-usd"></i>
+											<i class="icon-usd"></i>
+											<i class="icon-usd"></i>
+										</div>
+										<input type="hidden" name="Location[location_category]" value="1" class="location_amount_range">
+									</div>
+
+									<!-- Location Facilities -->
+									<div class="location-facilities-block">
+										<h5 class="block-title">Location facilities<span class="add_facility">+ Add facility</span></h5>
+
+										<ul class="clean-list facilities-list">
+
+										</ul>
+
+										<!-- Select icons -->
+										<div class="facilities-icons">
+											<div class="picker-title">Select an icon:</div>
+											<div class="icon-picker">
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-global">
+													<i class="icon-global"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-envelope">
+													<i class="icon-envelope"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mail">
+													<i class="icon-mail"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-email">
+													<i class="icon-email"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-letter">
+													<i class="icon-letter"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-message">
+													<i class="icon-message"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mail-envelope-closed">
+													<i class="icon-mail-envelope-closed"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-envelope-o">
+													<i class="icon-envelope-o"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-dollar">
+													<i class="icon-dollar"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-usd">
+													<i class="icon-usd"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-keyboard_return">
+													<i class="icon-keyboard_return"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-menu">
+													<i class="icon-menu"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-menu2">
+													<i class="icon-menu2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-menu3">
+													<i class="icon-menu3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-amazon">
+													<i class="icon-amazon"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-google">
+													<i class="icon-google"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-google-plus">
+													<i class="icon-google-plus"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-facebook">
+													<i class="icon-facebook"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-instagram">
+													<i class="icon-instagram"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-whatsapp">
+													<i class="icon-whatsapp"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-twitter">
+													<i class="icon-twitter"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-vine">
+													<i class="icon-vine"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-rss">
+													<i class="icon-rss"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-youtube">
+													<i class="icon-youtube"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-twitch">
+													<i class="icon-twitch"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-vimeo">
+													<i class="icon-vimeo"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-dribbble">
+													<i class="icon-dribbble"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-behance">
+													<i class="icon-behance"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-500px">
+													<i class="icon-500px"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-dropbox">
+													<i class="icon-dropbox"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-blogger">
+													<i class="icon-blogger"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tumblr">
+													<i class="icon-tumblr"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-yahoo">
+													<i class="icon-yahoo"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-appleinc">
+													<i class="icon-appleinc"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-linkedin">
+													<i class="icon-linkedin"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-pinterest">
+													<i class="icon-pinterest"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-foursquare">
+													<i class="icon-foursquare"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-yelp">
+													<i class="icon-yelp"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-html-five">
+													<i class="icon-html-five"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-user">
+													<i class="icon-user"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-arrow-bottom">
+													<i class="icon-arrow-bottom"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-search-2">
+													<i class="icon-search-2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-search-3">
+													<i class="icon-search-3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Arrow_Forward">
+													<i class="icon-Arrow_Forward"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-icon-arrow-right-c">
+													<i class="icon-icon-arrow-right-c"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-icon-arrow-right-c2">
+													<i class="icon-icon-arrow-right-c2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ring">
+													<i class="icon-ring"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-t-shirt">
+													<i class="icon-t-shirt"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-paris">
+													<i class="icon-paris"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mountains">
+													<i class="icon-mountains"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-suitcase">
+													<i class="icon-suitcase"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-suitcase2">
+													<i class="icon-suitcase2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mountains2">
+													<i class="icon-mountains2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Arrow_Forward2">
+													<i class="icon-Arrow_Forward2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-89">
+													<i class="icon-Streamline-89"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-94">
+													<i class="icon-Streamline-94"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-18">
+													<i class="icon-Streamline-18"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-48">
+													<i class="icon-Streamline-48"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-65">
+													<i class="icon-Streamline-65"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-58">
+													<i class="icon-Streamline-58"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-facebook-social-media">
+													<i class="icon-facebook-social-media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-facebook-social-media2">
+													<i class="icon-facebook-social-media2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-twitter-social-media">
+													<i class="icon-twitter-social-media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-pinterest-social-media">
+													<i class="icon-pinterest-social-media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-youtube-social-media">
+													<i class="icon-youtube-social-media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-trip_advisor-social-media">
+													<i class="icon-trip_advisor-social-media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-architecture-interior-06">
+													<i class="icon-architecture-interior-06"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-user2">
+													<i class="icon-user2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-user22">
+													<i class="icon-user22"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lock2">
+													<i class="icon-lock2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-cross">
+													<i class="icon-cross"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-cross2">
+													<i class="icon-cross2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-left">
+													<i class="icon-left"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-search4">
+													<i class="icon-search4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-user3">
+													<i class="icon-user3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lock3">
+													<i class="icon-lock3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-settings">
+													<i class="icon-settings"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-circle-close">
+													<i class="icon-circle-close"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-essential_set_close">
+													<i class="icon-essential_set_close"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-heart">
+													<i class="icon-heart"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-like_outline">
+													<i class="icon-like_outline"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-location">
+													<i class="icon-location"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-09">
+													<i class="icon-Streamline-09"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-envelope2">
+													<i class="icon-envelope2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-phone">
+													<i class="icon-phone"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-facebook_online_social_media">
+													<i class="icon-facebook_online_social_media"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ExpandMore">
+													<i class="icon-ExpandMore"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-182">
+													<i class="icon-Streamline-182"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-52">
+													<i class="icon-Streamline-52"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-63">
+													<i class="icon-Streamline-63"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-75">
+													<i class="icon-Streamline-75"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-22">
+													<i class="icon-Streamline-22"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-delete">
+													<i class="icon-delete"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-45">
+													<i class="icon-Streamline-45"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Streamline-44">
+													<i class="icon-Streamline-44"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-link">
+													<i class="icon-link"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-social-facebook">
+													<i class="icon-social-facebook"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-03-twitter">
+													<i class="icon-03-twitter"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-33-pinterest">
+													<i class="icon-33-pinterest"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-Location_Outline-02">
+													<i class="icon-Location_Outline-02"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-phone2">
+													<i class="icon-phone2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-phone3">
+													<i class="icon-phone3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-phone4">
+													<i class="icon-phone4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mobile3">
+													<i class="icon-mobile3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ipod">
+													<i class="icon-ipod"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-monitor">
+													<i class="icon-monitor"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-modem">
+													<i class="icon-modem"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-window">
+													<i class="icon-window"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mouse">
+													<i class="icon-mouse"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-camera2">
+													<i class="icon-camera2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-camera3">
+													<i class="icon-camera3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volume">
+													<i class="icon-volume"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-music2">
+													<i class="icon-music2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-broadcast">
+													<i class="icon-broadcast"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-gamepad">
+													<i class="icon-gamepad"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-earth">
+													<i class="icon-earth"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-location">
+													<i class="icon-location"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-trashcan">
+													<i class="icon-trashcan"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-cart">
+													<i class="icon-cart"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-gift">
+													<i class="icon-gift"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-settings">
+													<i class="icon-settings"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-medicine">
+													<i class="icon-medicine"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-cone">
+													<i class="icon-cone"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key3">
+													<i class="icon-key3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-food">
+													<i class="icon-food"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-cup">
+													<i class="icon-cup"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-drink">
+													<i class="icon-drink"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mug2">
+													<i class="icon-mug2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lollipop">
+													<i class="icon-lollipop"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-car">
+													<i class="icon-car"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-gaspump">
+													<i class="icon-gaspump"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-beer">
+													<i class="icon-beer"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-credit-card2">
+													<i class="icon-credit-card2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-device-camera">
+													<i class="icon-device-camera"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-device-camera-video">
+													<i class="icon-device-camera-video"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-device-mobile">
+													<i class="icon-device-mobile"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-flame">
+													<i class="icon-flame"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-gist-secret">
+													<i class="icon-gist-secret"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-home4">
+													<i class="icon-home4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key4">
+													<i class="icon-key4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-law">
+													<i class="icon-law"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-location2">
+													<i class="icon-location2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-microscope">
+													<i class="icon-microscope"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ruby">
+													<i class="icon-ruby"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tools">
+													<i class="icon-tools"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-trashcan2">
+													<i class="icon-trashcan2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-home">
+													<i class="icon-home"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-home2">
+													<i class="icon-home2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-home3">
+													<i class="icon-home3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-office">
+													<i class="icon-office"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-camera">
+													<i class="icon-camera"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-headphones">
+													<i class="icon-headphones"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-music">
+													<i class="icon-music"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-play">
+													<i class="icon-play"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-film">
+													<i class="icon-film"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-video-camera">
+													<i class="icon-video-camera"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-dice">
+													<i class="icon-dice"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-pacman">
+													<i class="icon-pacman"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-bullhorn">
+													<i class="icon-bullhorn"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-connection">
+													<i class="icon-connection"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-podcast">
+													<i class="icon-podcast"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-feed">
+													<i class="icon-feed"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-credit-card">
+													<i class="icon-credit-card"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lifebuoy">
+													<i class="icon-lifebuoy"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-phone">
+													<i class="icon-phone"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-printer">
+													<i class="icon-printer"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-display">
+													<i class="icon-display"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-laptop">
+													<i class="icon-laptop"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mobile">
+													<i class="icon-mobile"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mobile2">
+													<i class="icon-mobile2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key">
+													<i class="icon-key"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key2">
+													<i class="icon-key2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-wrench">
+													<i class="icon-wrench"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-aid-kit">
+													<i class="icon-aid-kit"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-mug">
+													<i class="icon-mug"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-spoon-knife">
+													<i class="icon-spoon-knife"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-fire">
+													<i class="icon-fire"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lab">
+													<i class="icon-lab"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-airplane">
+													<i class="icon-airplane"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-truck">
+													<i class="icon-truck"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volume-high">
+													<i class="icon-volume-high"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-heart">
+													<i class="icon-heart"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tv">
+													<i class="icon-tv"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-sound">
+													<i class="icon-sound"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-video">
+													<i class="icon-video"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-trash">
+													<i class="icon-trash"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key5">
+													<i class="icon-key5"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-pen">
+													<i class="icon-pen"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-diamond">
+													<i class="icon-diamond"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-display2">
+													<i class="icon-display2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-location3">
+													<i class="icon-location3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-clock">
+													<i class="icon-clock"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-banknote">
+													<i class="icon-banknote"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-data">
+													<i class="icon-data"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-music3">
+													<i class="icon-music3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-megaphone">
+													<i class="icon-megaphone"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-lab2">
+													<i class="icon-lab2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-food2">
+													<i class="icon-food2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-t-shirt">
+													<i class="icon-t-shirt"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-fire2">
+													<i class="icon-fire2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-wallet">
+													<i class="icon-wallet"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-vynil">
+													<i class="icon-vynil"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-truck2">
+													<i class="icon-truck2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-world">
+													<i class="icon-world"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key6">
+													<i class="icon-key6"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key7">
+													<i class="icon-key7"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-key8">
+													<i class="icon-key8"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-printer2">
+													<i class="icon-printer2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-printer3">
+													<i class="icon-printer3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-printer4">
+													<i class="icon-printer4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball">
+													<i class="icon-basketball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball2">
+													<i class="icon-basketball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-baseball">
+													<i class="icon-baseball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-baseball2">
+													<i class="icon-baseball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tennis-ball">
+													<i class="icon-tennis-ball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tennis-ball2">
+													<i class="icon-tennis-ball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-bowling-ball">
+													<i class="icon-bowling-ball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-bowling-ball2">
+													<i class="icon-bowling-ball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-billiard-ball">
+													<i class="icon-billiard-ball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-billiard-ball2">
+													<i class="icon-billiard-ball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-soccer-ball">
+													<i class="icon-soccer-ball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-soccer-ball2">
+													<i class="icon-soccer-ball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-soccer-court">
+													<i class="icon-soccer-court"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-soccer-court2">
+													<i class="icon-soccer-court2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-football">
+													<i class="icon-football"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-football2">
+													<i class="icon-football2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-football3">
+													<i class="icon-football3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-football4">
+													<i class="icon-football4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball3">
+													<i class="icon-basketball3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball4">
+													<i class="icon-basketball4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-baseball-set">
+													<i class="icon-baseball-set"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-baseball-set2">
+													<i class="icon-baseball-set2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tennis-ball3">
+													<i class="icon-tennis-ball3"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-tennis-ball4">
+													<i class="icon-tennis-ball4"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball-hoop">
+													<i class="icon-basketball-hoop"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-basketball-hoop2">
+													<i class="icon-basketball-hoop2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-table-tennis">
+													<i class="icon-table-tennis"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-table-tennis2">
+													<i class="icon-table-tennis2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volleyball">
+													<i class="icon-volleyball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volleyball2">
+													<i class="icon-volleyball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volleyball-water">
+													<i class="icon-volleyball-water"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-volleyball-water2">
+													<i class="icon-volleyball-water2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-sailing-boat">
+													<i class="icon-sailing-boat"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-sailing-boat2">
+													<i class="icon-sailing-boat2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-sailing-boat-water">
+													<i class="icon-sailing-boat-water"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-sailing-boat-water2">
+													<i class="icon-sailing-boat-water2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-bowling-pin-ball">
+													<i class="icon-bowling-pin-ball"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-bowling-pin-ball2">
+													<i class="icon-bowling-pin-ball2"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ice-skate">
+													<i class="icon-ice-skate"></i>
+												</label>
+												<label>
+													<input type="radio" name="facility_icon_selected" value="icon-ice-skate2">
+													<i class="icon-ice-skate2"></i>
+												</label>
+											</div>
+										</div>								</div>
+
+										<!-- Upload Images -->
+										<div class="gallery-images-block">
+											<h5 class="block-title">
+												<span class="text">Gallery images</span>
+												<span class="add-images-btn">
+													<span class="placeholder">(+ Add photos)</span>
+												</span>
+											</h5>
+
+											<div class="images-gallery">
+												<label class="add-images-thumbnail">
+													<i class="icon icon-Streamline-44"></i>
+													<input type="file" name="images[]" id="images" multiple="" accept="image/*">
+												</label>
+												<input type="hidden" name="featured-image" class="featured-image">
+												<input type="hidden" class="removed-images" name="removed-images-input">
+
+												<div class="row row-fit-10"></div>
+											</div>
+										</div>
+
+										<!-- Location Block -->
+										<div class="set-location-block">
+											<div class="input-line">
+												<h5 class="line-title">Location</h5>
+
+												<input type="text" name="Location[map][location]" class="form-input check-value required-input" placeholder="NY, Manhattan" autocomplete="off">
+												<input type="hidden" name="Location[loc_hidden]" class="hidden_input_for_city">
+											</div>
+
+											<div class="map-container" style="position: relative; overflow: hidden;">
+												<div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+													<div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;">
+														<div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;">
+															<div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 987; transform: matrix(1, 0, 0, 1, -253, -165);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 987; transform: matrix(1, 0, 0, 1, -253, -165);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 987; transform: matrix(1, 0, 0, 1, -253, -165);"><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2412!3i3078!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=9197" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2411!3i3078!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=103048" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2413!3i3078!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=46417" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2413!3i3079!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=127555" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2412!3i3079!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=90335" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2410!3i3079!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=15895" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2411!3i3077!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=21910" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2412!3i3077!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=59130" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2411!3i3079!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=53115" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2410!3i3077!4i256!2m3!1e0!2sm!3i442147200!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=28494" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2410!3i3078!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=65828" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 512px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i13!2i2413!3i3077!4i256!2m3!1e0!2sm!3i442147236!2m3!1e2!6m1!3e5!3m14!2sen-US!3sUS!5e18!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2zcC5zOi02MHxwLmw6LTYw!4e0!23i1301875&amp;token=96350" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="about:blank"></iframe><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" rel="noopener" href="https://maps.google.com/maps?ll=40.759056,-74.004336&amp;z=13&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 329px; top: 149px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2018 Google</div><button draggable="false" title="Close" aria-label="Close" type="button" class="gm-ui-hover-effect" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: absolute; cursor: pointer; user-select: none; top: 0px; right: 0px; width: 37px; height: 37px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="pointer-events: none; display: block; width: 13px; height: 13px; margin: 12px;"></button></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 166px; bottom: 0px; width: 121px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2018 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2018 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 95px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" rel="noopener" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" class="gm-control-active gm-fullscreen-control" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px; padding: 0px; position: absolute; cursor: pointer; user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; top: 0px; right: 0px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%20018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 11px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 11px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2C0v2v4h2V2h4V0H2H0z%20M16%2C0h-4v2h4v4h2V2V0H16z%20M16%2C16h-4v2h4h2v-2v-4h-2V16z%20M2%2C12H0v4v2h2h4v-2H2V12z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 11px;"></button><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@40.7590562,-74.0043362,13z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="40" controlheight="81" style="margin: 10px; user-select: none; position: absolute; bottom: 95px; right: 40px;"><div class="gmnoprint" controlwidth="40" controlheight="81" style="position: absolute; left: 0px; top: 0px;"><div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 40px; height: 81px;"><button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" class="gm-control-active" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; overflow: hidden; width: 40px; height: 40px; top: 0px; left: 0px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2218%2C7%2011%2C7%2011%2C0%207%2C0%207%2C7%200%2C7%200%2C11%207%2C11%207%2C18%2011%2C18%2011%2C11%2018%2C11%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 9px 11px 13px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpolygon%20fill%3D%22%23333%22%20points%3D%2218%2C7%2011%2C7%2011%2C0%207%2C0%207%2C7%200%2C7%200%2C11%207%2C11%207%2C18%2011%2C18%2011%2C11%2018%2C11%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 9px 11px 13px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpolygon%20fill%3D%22%23111%22%20points%3D%2218%2C7%2011%2C7%2011%2C0%207%2C0%207%2C7%200%2C7%200%2C11%207%2C11%207%2C18%2011%2C18%2011%2C11%2018%2C11%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 9px 11px 13px;"></button><div style="position: relative; overflow: hidden; width: 30px; height: 1px; margin: 0px 5px; background-color: rgb(230, 230, 230); top: 0px;"></div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" class="gm-control-active" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; overflow: hidden; width: 40px; height: 40px; top: 0px; left: 0px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C7h18v4H0V7z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 13px 11px 9px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2C7h18v4H0V7z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 13px 11px 9px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2C7h18v4H0V7z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 18px; width: 18px; margin: 13px 11px 9px;"></button></div></div><div class="gmnoprint" controlwidth="40" controlheight="40" style="display: none; position: absolute;"><div style="width: 40px; height: 40px;"><button draggable="false" title="Rotate map 90 degrees" aria-label="Rotate map 90 degrees" type="button" class="gm-control-active" style="background: none rgb(255, 255, 255); display: none; border: 0px; margin: 0px 0px 32px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 40px; height: 40px; top: 0px; left: 0px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 28px; width: 28px; margin: 6px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 28px; width: 28px; margin: 6px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="height: 28px; width: 28px; margin: 6px;"></button><button draggable="false" title="Tilt map" aria-label="Tilt map" type="button" class="gm-tilt gm-control-active" style="background: none rgb(255, 255, 255); display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 40px; height: 40px; top: 0px; left: 0px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="width: 18px; height: 16px; margin: 12px 11px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="width: 18px; height: 16px; margin: 12px 11px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A" style="width: 18px; height: 16px; margin: 12px 11px;"></button></div></div></div></div></div><div style="background-color: white; font-weight: 500; font-family: Roboto, sans-serif; padding: 15px 25px; box-sizing: border-box; top: 5px; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 5px; left: 50%; max-width: 375px; position: absolute; transform: translateX(-50%); width: calc(100% - 10px); z-index: 1;"><div><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/google_gray.svg" draggable="false" style="padding: 0px; margin: 0px; border: 0px; height: 17px; vertical-align: middle; width: 52px; user-select: none;"></div><div style="line-height: 20px; margin: 15px 0px;"><span style="color: rgba(0, 0, 0, 0.87); font-size: 14px;">This page can't load Google Maps correctly.</span></div><table style="width: 100%;"><tr><td style="line-height: 16px; vertical-align: middle;"><a href="https://developers.google.com/maps/documentation/javascript/error-messages?utm_source=maps_js&amp;utm_medium=degraded&amp;utm_campaign=billing#api-key-and-billing-errors" target="_blank" rel="noopener" style="color: rgba(0, 0, 0, 0.54); font-size: 12px;">Do you own this website?</a></td><td style="text-align: right;"><button class="dismissButton">OK</button></td></tr></table></div></div>
+											<input type="hidden" name="Location[map][lat]" class="location-map-lat" value="40.715126852017086">
+											<input type="hidden" name="Location[map][long]" class="location-map-long" value="-74.00364875793457">
+										</div>
+									</div>
+
+									<!-- Contact Info -->
+									<div class="property-contact-info">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="input-line">
+													<h5 class="line-title">Working hours</h5>
+
+													<div class="working-hours">
+														<input type="text" name="Location[working_hours][opening]" class="form-input check-value required-input" maxlength="5" placeholder="00:00">
+														<span></span>
+														<input type="text" name="Location[working_hours][closing]" class="form-input check-value required-input" maxlength="5" placeholder="00:00">
+													</div>
+												</div>
+											</div>
+
+											<div class="col-md-9">
+
+												<div class="input-line">
+													<h5 class="line-title">Date avaiable</h5>
+													<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" class="form-input check-value required-input">
+												</div>
+												<div class="input-line">
+													<h5 class="line-title">Phone</h5>
+													<input type="text" name="Location[contacts][phone]" class="form-input check-value required-input" placeholder="(+373)">
+												</div>
+												<div class="input-line">
+													<h5 class="line-title">Email</h5>
+													<input type="email" name="Location[contacts][email]" class="form-input check-value required-input" placeholder="hi@teslathemes.com">
+												</div>
+
+												<div class="input-line">
+													<h5 class="line-title">Twitter username</h5>
+													<input type="text" name="Location[contacts][twitter_name]" class="form-input check-value" placeholder="https://">
+												</div>
+
+												<div class="input-line">
+													<h5 class="line-title">Facebook url</h5>
+													<input type="text" name="Location[contacts][facebook_url]" class="form-input check-value" placeholder="https://">
+												</div>
+
+												<div class="select-box add-social-platforms-select-box">
+													<input type="text" class="select-box-input form-input check-value" readonly="" placeholder="Other Platforms">
+													<ul class="clean-list select-box-options">
+														<li class="option" data-options="{&quot;title&quot;: &quot;Pinterest Url&quot;, &quot;name&quot;: &quot;Location[contacts][pinterest]&quot; ,&quot;placeholder&quot;: &quot;https://&quot;}">Pinterest</li>
+														<li class="option" data-options="{&quot;title&quot;: &quot;Instagram Account&quot;,&quot;name&quot;: &quot;Location[contacts][instagram]&quot;,  &quot;placeholder&quot;: &quot;https://&quot;}">Instagram</li>
+														<li class="option" data-options="{&quot;title&quot;: &quot;Google+ Url&quot;, &quot;name&quot;: &quot;Location[contacts][googleplus]&quot;, &quot;placeholder&quot;: &quot;https://&quot;}">Google+</li>
+														<li class="option" data-options="{&quot;title&quot;: &quot;Youtube Channel&quot;, &quot;name&quot;: &quot;Location[contacts][youtube]&quot; ,&quot;placeholder&quot;: &quot;https://&quot;}">Youtube</li>
+													</ul>
+												</div>
+
+												<!-- Website -->
+												<div class="input-line hide-input">
+													<span class="btn-reveal-input">
+														<i class="icon icon-link"></i>
+														<span class="text">Add link on website</span>
+													</span>
+
+													<div class="form-input-wrapper">
+														<input type="text" name="Location[website]" class="form-input check-value input-hidden" placeholder="Website URL">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Save Data -->
+									<div class="property-save-block align-right">
+										<input type="button" name="wp-submit" class="btn btn-save btn-default color-2" value="Save">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h1 class="align-center"></h1>
+		</section>
+
+		<!-- Page Overlay -->
+		<span class="page-overlay"></span>
+	</div>
+
+
+	<script type="text/javascript">
+		jQuery('input[name="daterange"]').daterangepicker({
+		  opens: 'left'
+		}, function(start, end, label) {
+		  console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+		});
+	</script>
+
+	{% endblock %}
